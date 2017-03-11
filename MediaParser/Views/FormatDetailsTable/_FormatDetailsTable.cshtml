@@ -1,0 +1,119 @@
+﻿@model MediaParser.BusinessLogic.Types.InfoUnit
+<div id="tabs" style="display:none">
+    <ul>
+        @{int i = 1;}
+        @foreach (var item in Model.VideoInfoList.GroupBy(p => p.Format).OrderByDescending(p => p.Key == ".mp4").ThenBy(p => p.Key))
+            {
+            <li><a href="#tabs-@i">@item.Key</a></li>
+            i++;
+        }
+        @if (Model.AudioInfo != null)
+            {
+            <li><a href="#tabs-@i">Mp3</a></li>
+        }
+    </ul>
+    @{i = 1;}
+    @foreach (var item in Model.VideoInfoList.GroupBy(p => p.Format).OrderByDescending(p => p.Key == ".mp4").ThenBy(p => p.Key))
+    {
+        <div id="tabs-@i">
+            <table class="table">
+                <tr>
+                    <th>
+                        <span class="text">
+                            #
+                        </span>
+                    </th>
+                    <th>
+                        <span class="text">
+                            Name
+                        </span>
+                    </th>
+                    <th>
+                        <span class="text">
+                            Format
+                        </span>
+                    </th>
+                    <th>
+                        <span class="text">
+                            Link
+                        </span>
+                    </th>
+                </tr>
+                @{int tableIndex = 1; }
+                @foreach (var elemOfItem in item.OrderByDescending(p => p.Resolution).ToList())
+                {
+                    <tr>
+                        <td>
+                            @tableIndex
+                            @{tableIndex++;}
+                        </td>
+                        <td>
+                            @string.Format("{0}{1}", elemOfItem.Title, elemOfItem.Format.ToLower())
+                        </td>
+                        <td>
+                            @elemOfItem.Resolution
+                        </td>
+                        <td>
+                            <a download="@string.Format("{0}{1}", (elemOfItem.Title.Length > 20 ? elemOfItem.Title.Substring(0, 20) : elemOfItem.Title).Replace(' ', '_'), elemOfItem.Format.ToLower())" href="@elemOfItem.DownloadURL">Download</a>
+                        </td>
+                    </tr>
+                                }
+            </table>
+
+        </div>
+                                    i++;
+                                }
+        @if (Model.AudioInfo != null)
+        {
+            <div id="tabs-@i">
+                <table class="table">
+                    <tr>
+                        <th>
+                            <span class="text">
+                                #
+                            </span>
+                        </th>
+                        <th>
+                            <span class="text">
+                                Name
+                            </span>
+                        </th>
+                        <th>
+                            <span class="text">
+                                Format
+                            </span>
+                        </th>
+                        <th>
+                            <span class="text">
+                                Link
+                            </span>
+                        </th>
+                    </tr>
+                    @{int tableIndex = 1; }
+                        <tr>
+                            <td>
+                                @tableIndex
+                            </td>
+                            <td>
+                                @string.Format("{0}{1}", Model.AudioInfo.Title, Model.AudioInfo.Format.ToLower())
+                            </td>
+                            <td>
+                                @Model.AudioInfo.BitRate
+                            </td>
+                            <td>
+                                <a download="@string.Format("{0}{1}", (Model.AudioInfo.Title.Length > 20 ? Model.AudioInfo.Title.Substring(0, 20) : Model.AudioInfo.Title).Replace(' ', '_'), Model.AudioInfo.Format.ToLower())" href="@Model.AudioInfo.DownloadURL">Download</a>
+                            </td>
+                        </tr>
+                </table>
+
+            </div>
+                                        i++;
+                                    }
+        
+</div>
+<br />
+<script>
+        $(function () {
+            $("#tabs").tabs().show();
+        });
+</script>

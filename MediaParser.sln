@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaParser", "MediaParser\MediaParser.csproj", "{C44A4CA5-4FFC-4097-A42D-200D459271F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaParser.Data", "MediaParser.Data\MediaParser.Data.csproj", "{D97BD6BC-4EE5-4051-B8A3-E133130CF894}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaParser.BusinessLogic", "MediaParser.BusinessLogic\MediaParser.BusinessLogic.csproj", "{7DAAFE69-AE4E-43AE-B6F8-848827D92692}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaParser.Entities", "MediaParser.Entities\MediaParser.Entities.csproj", "{5B36F6D1-8F9C-468B-87BE-6DD1018E9B77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaParser.Interfaces", "MediaParser.Interfaces\MediaParser.Interfaces.csproj", "{46688634-9B18-4CCF-9EFB-140996BC9C4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C44A4CA5-4FFC-4097-A42D-200D459271F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44A4CA5-4FFC-4097-A42D-200D459271F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44A4CA5-4FFC-4097-A42D-200D459271F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44A4CA5-4FFC-4097-A42D-200D459271F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D97BD6BC-4EE5-4051-B8A3-E133130CF894}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D97BD6BC-4EE5-4051-B8A3-E133130CF894}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D97BD6BC-4EE5-4051-B8A3-E133130CF894}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D97BD6BC-4EE5-4051-B8A3-E133130CF894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DAAFE69-AE4E-43AE-B6F8-848827D92692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAAFE69-AE4E-43AE-B6F8-848827D92692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAAFE69-AE4E-43AE-B6F8-848827D92692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAAFE69-AE4E-43AE-B6F8-848827D92692}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B36F6D1-8F9C-468B-87BE-6DD1018E9B77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B36F6D1-8F9C-468B-87BE-6DD1018E9B77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B36F6D1-8F9C-468B-87BE-6DD1018E9B77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B36F6D1-8F9C-468B-87BE-6DD1018E9B77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46688634-9B18-4CCF-9EFB-140996BC9C4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46688634-9B18-4CCF-9EFB-140996BC9C4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46688634-9B18-4CCF-9EFB-140996BC9C4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46688634-9B18-4CCF-9EFB-140996BC9C4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

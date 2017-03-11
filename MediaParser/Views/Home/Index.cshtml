@@ -1,0 +1,52 @@
+﻿@model MediaParser.Models.ViewModels.MainLinkViewModel
+@{
+    ViewBag.Title = "Home";
+}
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<h1>Download YouTube videos</h1>
+<br />
+@using (Ajax.BeginForm("IndexPost", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "formatDetailsTableDiv", OnBegin = "ShowSpin()", OnComplete = "HideSpin()" }))
+{
+    <div class="jumbotron">
+        <div class="form-group">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control input-lg", id = "linkId", @placeholder = "Paste a link to the video" } })
+                @Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-primary btn-lg" value="Download" />
+            </div>
+        </div>
+        <br />
+    </div>
+}
+<div id="spinDiv" style="height: 200px; display: none;">
+
+</div>
+<div id="formatDetailsTableDiv">
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <p>
+            With this web service you can download YouTube videos in the required format for free. To do this, insert a link to the video and click on the "Download" button. Then select the video format to download.
+        </p>
+    </div>
+</div>
+@section scripts {
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script src="~/Scripts/spin.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        var spinner = new Spinner().spin();
+        $("#spinDiv").html(spinner.el);
+        function ShowSpin() {
+            $("#formatDetailsTableDiv").hide();
+            $("#spinDiv").show();
+        }
+        function HideSpin() {
+            $("#spinDiv").hide(); 
+            $("#formatDetailsTableDiv").show();
+        }
+    </script>
+}
