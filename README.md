@@ -1,7 +1,5 @@
 # MediaParser
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/abefb99f7f4a452faf0c28aa400bbc30)](https://app.codacy.com/app/smirnovma/mediaparser?utm_source=github.com&utm_medium=referral&utm_content=smirnovma/mediaparser&utm_campaign=Badge_Grade_Dashboard)
-
 The MediaParser is website for downloading videos from YouTube to your computer. The project is created as ASP MVC application. In this solution uses YoutubeExtractor (https://github.com/flagbug/YoutubeExtractor). Also in the program implements the principle of EF Code First and you have to change "SqlConnection" in Web.config. The database is used to store user-entered links.
 
 ![main](https://cloud.githubusercontent.com/assets/23377363/23825293/11617d1a-0698-11e7-8164-255c9f117a16.PNG)
